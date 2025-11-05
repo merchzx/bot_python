@@ -20,6 +20,8 @@ bot_token = os.getenv("TOKEN")
 
 url = f"https://api.telegram.org/bot{bot_token}/"  # don't forget to change the token!
 
+bot_key = '8549148937:AAH19CQ4Hyp9eK1q8jC9dKTENpvSdePiaTQ'  # don't forget to change the token!
+
 
 def last_update(request):
     response = requests.get(request + 'getUpdates')
