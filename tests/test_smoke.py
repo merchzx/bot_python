@@ -40,4 +40,4 @@ def test_long_string():
 def test_of_all():
     assert  checking("abcdABCD123")['SMALLS letters']==4
     assert  checking("abcdABCD123")['BIG letters']==4
-    assert  checking("abcdABCD123")['Numbers letters']==3
+    assert  checking("abcdABCD123")['Numbers']==3
