@@ -2,6 +2,8 @@ import time
 
 import requests
 import random
+from calculator import calculate_exp
+from text_checking import checking
 
 bot_key = '8549148937:AAH19CQ4Hyp9eK1q8jC9dKTENpvSdePiaTQ'
 
@@ -60,7 +62,13 @@ def main():
                                  'You have ' + str(_1) + ' and ' + str(_2) + '!\nYour result is ' + str(_1 + _2) + '!')
                 else:
                     send_message(get_chat_id(update), 'Sorry, I don\'t understand you :(')
-                update_id += 1
+                    result = checking(get_message_text(update))
+                    if result is not None:
+                        send_message(get_chat_id(update), result)
+                    else:
+                        send_message(get_chat_id(update), 'Sorry, I don\'t understand you :(')
+
+        update_id += 1
     except KeyboardInterrupt:
         print('\nБот зупинено')
 
